@@ -269,7 +269,6 @@ class Ora {
 				this.stream.moveCursor(0, -1);
 			}
 
-			this.stream.clearLine();
 			this.stream.cursorTo(this.indent);
 		}
 
@@ -364,6 +363,9 @@ class Ora {
 	}
 
 	stopAndPersist(options = {}) {
+
+		this.stream.clearLine();
+
 		if (this.isSilent) {
 			return this;
 		}
